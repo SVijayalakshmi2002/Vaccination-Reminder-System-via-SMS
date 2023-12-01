@@ -1,0 +1,197 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Latest compiled and minified CSS -->
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+    />
+
+    <!-- jQuery library -->
+    <script
+      src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"
+    ></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script
+      src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"
+    ></script>
+
+  </head>
+  <body>
+    <div class="container">
+      <h1 class="text-center mt-3 mb-3">{{title}}</h1>
+      <div class="card">
+        <div class="card-header">
+          <div class="row">
+            <div class="col">{{title}}</div>
+            <div class="col"></div>
+          </div>
+        </div>
+        <div class="card-body">
+          <div class="table-responsive">
+            {{!-- <table class="table table-bordered">
+                        <thead>
+                        <tr>
+                            <th>Applicant ID</th>
+                            <th>Name</th>
+                            <th>Gender</th>
+                            <th>Father Name</th>
+                            <th>Mother Name</th> 
+                            <th>Date</th>
+                            <th>Vaccine</th>
+                            <th>Action</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                          {{#each sampleData}}
+                                <tr>
+                                    <td>{{ sampleData.Applicant_id }}</td>
+                                    <td>{{ sampleData.Name }}</td>
+                                    <td>{{sampleData.Gender }}</td>
+                                    <td>{{ sampleData.Father_Name }}</td>
+                                    <td>{{ sampleData.Mother_Name }}</td>
+                                    <td>{{ sampleData.date_of_vaccination }}</td>
+                                    <td>{{ sampleData.vaccine }}</td>
+                                    <td><a href="/users/vaccination_detail/{{ appId }}"><i class="edit">Update</i></a></td>
+                                </tr>
+                                </tbody>
+
+
+                    </table> --}}
+
+
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th>Applicant ID</th>
+      <th>Name</th>
+      <th>Father Name</th>
+      <th>Mother Name</th>
+      <th>Date</th>
+      <th>Vaccine</th>
+      <th>Name of Vaccination</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#each sampleData}}
+    <tr>
+      <td>{{ Applicant_id }}</td>
+      <td>{{ Name }}</td>
+      <td>{{ Father_Name }}</td>
+      <td>{{ Mother_Name }}</td>
+      <td>{{ formatted_date }}</td>
+      <td>{{ vaccine }}</td>
+      <td>{{ Name_of_Vaccination }}</td>
+      <td><a href="/users/vaccination_detail/{{ Applicant_id }}"><i class="edit">Update</i></a></td>
+    </tr>
+    {{/each}}
+  </tbody>
+</table>
+
+
+
+
+
+
+
+                    {{!-- <table class="table table-bordered">
+  <thead>
+    <tr>
+      <th>Applicant ID</th>
+      <th>Name</th>
+      <th>Gender</th>
+      <th>Father Name</th>
+      <th>Mother Name</th> 
+      <th>Vaccine</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for data in sampleDataList %}
+    <tr>
+      <td>{{ data.Applicant_id }}</td>
+      <td>{{ data.Name }}</td>
+      <td>{{ data.Gender }}</td>
+      <td>{{ data.Father_Name }}</td>
+      <td>{{ data.Mother_Name }}</td>
+      <td>{{ data.vaccine }}</td>
+      <td><a href="/users/vaccination_detail/{{ data.appId }}"><i class="edit">Update</i></a></td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table> --}}
+
+
+{{!-- <table class="table table-bordered">
+  <thead>
+    <tr>
+      <th>Applicant ID</th>
+      <th>Name</th>
+      <th>Gender</th>
+      <th>Father Name</th>
+      <th>Mother Name</th>
+      <th>Vaccine</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#each data}}
+      <tr>
+        <td>{{this.Applicant_id}}</td>
+        <td>{{this.Name}}</td>
+        <td>{{this.Gender}}</td>
+        <td>{{this.Father_Name}}</td>
+        <td>{{this.Mother_Name}}</td>
+        <td>{{this.vaccine}}</td>
+        <td><a href="/users/vaccination_detail/{{this.Applicant_id}}"><i class="edit">Update</i></a></td>
+      </tr>
+    {{/each}}
+  </tbody>
+</table>
+ --}}
+
+
+{{!-- <table class="table table-bordered">
+  <thead>
+    <tr>
+      <th>Applicant ID</th>
+      <th>Name</th>
+      <th>Gender</th>
+      <th>Father Name</th>
+      <th>Mother Name</th>
+      <th>Vaccine</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#each data}}
+    <tr>
+      <td>{{ this.Applicant_id }}</td>
+      <td>{{ this.Name }}</td>
+      <td>{{ this.Gender }}</td>
+      <td>{{ this.Father_Name }}</td>
+      <td>{{ this.Mother_Name }}</td>
+      <td>{{ this.vaccine }}</td>
+      <td><a href="/users/vaccination_detail/{{ this.Applicant_id }}"><i class="edit">Update</i></a></td>
+    </tr>
+    {{/each}}
+  </tbody>
+</table>
+
+ --}}
+
+
+
+
+            {{! <center><button type="button" class="btn btn-success"><a href="/vaccination_detail">UPDATE</a></button></center> }}
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </body>
+</html>

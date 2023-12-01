@@ -1,0 +1,60 @@
+<style>
+  body{
+    background-image: url("/css/profilebackground.jpg");
+    background-size: contain;
+  }
+  .container-fluid{
+      width: auto;
+      height: auto;
+  }
+  #button{
+    background-color: #3827d6;
+    border: none;
+    color: white;
+    padding: 10px 25px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 10px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 8px;
+  }
+  #APPLICATIONID{
+    padding: 3px;
+  }
+</style>
+
+<body>
+    <nav>
+    <div class="logo">VACCINATION REMINDER</div>
+    <div class="menu">
+        <a href="/">Home</a>
+        <a href="/register">Register</a>
+        <a href="/login">Login</a>
+        <a href="/report">Report</a>
+    </div>
+    </nav>
+    <div class="container-fluid">
+      <h2>LOGIN</h2>
+        <br>
+        <form action="/users/login" method="post">
+            <div class="data">
+                <label for="APPLICATIONID">APPLICATION ID</label>
+                <input type="text" name="APPLICATIONID" id="APPLICATIONID" /><br><br>
+                <label for="MobileNumber">Mobile Number</label>
+                <input type="text" name="MobileNumber" id="MobileNumber" />
+                <div class="btn">
+                 <input type="submit" value="Submit">
+                </div>
+            </div>
+          </form>
+      <center>
+      <img src="/css/profile.jpg" width="200" height="200"/>
+      <br>
+    </div>
+
+
+
+</body>
+

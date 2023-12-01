@@ -1,0 +1,90 @@
+
+<head>
+    <script type="text/javascript">
+        function lettersOnly(input){
+            var regex = /[^a-z]/gi;
+            input.value = input.value.replace(regex,"");
+        }
+    </script>
+    <style>
+        input[type = submit] {
+            background-color: rgb(145, 131, 230);
+            border:3cm;
+            text-decoration: none;
+            color: rgb(252, 249, 249);
+            padding: 15px 15px;
+            margin: 5px 5px;
+            cursor: pointer;
+            font-size: 16px;
+            border-radius: 8px;
+            float: center;
+            display: block;
+            position: fixed;
+            left: 50%;
+            transform: translateX(-50%);
+            
+         }
+         input[type = submit]:hover{
+            box-shadow: 2px 2px 2px 1px rgb(131, 131, 219) ;
+            background-color: rgb(197, 201, 233);
+         }
+         
+    </style>
+</head>
+
+
+<body>
+    <nav>
+    <div class="logo">VACCINATION REMINDER</div>
+    <div class="menu">
+        <a href="/">Home</a>
+        <a href="/register">Register</a>
+        <a href="/login">Login</a>
+        <a href="/report">Report</a>
+    </div>
+    </nav>
+
+    <div class="container">
+        <div class="text">Registration</div>
+      
+        <form action="/users/register" method="post">
+            <div class="data">
+                <label for="name">Name</label>
+                <input type="text" name="name" id="name" onkeyup="lettersOnly(this)" required />
+            </div>
+         
+            <div class="d">
+                <label for="Gender">Gender</label><br>
+                <br>
+                <input type="radio" name="gender" value="male"> Male
+                <input type="radio" name="gender" value="female"> Female
+            </div>
+            <div class="data">
+                <label for="name">Father Name</label>
+                <input type="text" name="FatherName" id="FatherName" onkeyup="lettersOnly(this)" required/>
+            </div>
+            <div class="data">
+                <label for="name">Mother Name</label>
+                <input type="text" name="MotherName" id="MotherName" onkeyup="lettersOnly(this)" required/>
+            </div>
+            <div class="data">
+                <label for="phone">Phone number:</label>
+                <input type="tel" id="phone" name="phone" pattern="[0-9]{3}[0-9]{3}[0-9]{4}" required><br><br>
+            </div>
+            <div class="data">
+                <label for="email">Email</label>
+                <input type="email" name="email" id="email" required/>
+            </div>
+            
+            <div class="btn">
+                <input type="submit" value="REGISTER">
+            </div>
+            
+            <div class="signup-link">
+                Already a member ? <a href="/login">Login now</a>
+            </div>
+        </form>
+    </div>
+</body>
+
+</html>

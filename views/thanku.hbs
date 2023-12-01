@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Thank You</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f2f2f2;
+      }
+      
+      .container {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 40px;
+        background-color: rgba(255, 255, 255, 0.5);
+        box-shadow: 0 0 10px rgba(0,0,0,0.3);
+        text-align: center;
+      }
+      
+      h1 {
+        font-size: 48px;
+        margin-bottom: 20px;
+        color: #0077cc;
+      }
+      
+      p {
+        font-size: 24px;
+        margin-bottom: 40px;
+      }
+      
+      a {
+        display: inline-block;
+        padding: 10px 20px;
+        border-radius: 5px;
+        background-color: #0077cc;
+        color: #ffffff;
+        text-decoration: none;
+        transition: background-color 0.2s ease;
+      }
+      
+      a:hover {
+        background-color: #005ea6;
+      }
+    </style>
+  </head>
+  <body>
+       <div class="container">
+      <h1 >{{title}}</h1>
+      <p>{{msg}}</p>
+      <h3>Application Id : {{id}}</h3>
+      <br><br>
+      <a href="/">Home</a>
+      <a href="/login">Login</a>
+
+{{!-- '<div class="msg1"> <span><p><b>{{appId}}</b> </p> <textarea style="margin:1% 1%; font-size: 20px; width:95%; height: 100px; border: 1px solid #012060; border-radius: 3px; box-shadow: 1px 1px #333366;" id="comments">'  --}}
+
+    </div>
+  </body>
+</html>

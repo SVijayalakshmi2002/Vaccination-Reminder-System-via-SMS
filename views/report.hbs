@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Report</title>
+
+    <style>
+        body {
+            background-color: bisque;
+        }
+        
+        form {
+            background-color: #ffffff;
+            border-radius: 5px;
+            padding: 20px;
+            margin: 50px auto;
+            max-width: 500px;
+            box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.2);
+        }
+        
+        p {
+            width: 20%;
+            font-size: 140%;
+            background-color: lightgreen;
+        }
+        
+        .filter-btn {
+            background-color: orangered;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        
+        select {
+            font-size: 18px;
+            width: 200px;
+            padding: 10px;
+            border: none;
+            border-bottom: 2px solid black;
+            margin: 10px 0;
+            font-family: Arial, sans-serif;
+        }
+        
+        input[type="number"] {
+            font-size: 16px;
+            width: 120px;
+            padding: 8px;
+            border: none;
+            border-bottom: 2px solid black;
+            margin: 10px 0;
+            font-family: Arial, sans-serif;
+        }
+    </style>
+</head>
+
+<body>
+    <br><br><br>
+
+<center>
+   
+
+        <form id="filter-form" action="/users/report" method="post">
+                <input type="date" id="date" name="date" style="height: 40px;width:120px;display:inline-table;font-family: Arial, sans-serif; font-size: 16px; color: #333; padding: 8px; border: none; border-bottom: 2px solid black;" value="">
+        <script>
+            var today = new Date().toISOString().substr(0, 10);
+            document.querySelector("#date").value = today;
+        </script>
+        <br><br>
+                <label for="vaccine-filter"><p><b>Vaccine</p></b></label>
+                <select id="vaccine-filter" name="vaccine">
+                <option value="">All Vaccines</option>
+                <option value="1">1 - AT BIRTH</option>
+                <option value="2">2 - 6TH WEEK </option>
+                <option value="3">3 - 10TH WEEK</option>
+                <option value="4">4 - 14TH WEEK</option>
+                <option value="5">5 - 9TH - 12TH MONTHS </option>
+                <option value="6">6 - 16TH - 24TH MONTHS </option>
+                <option value="7">7 - 5 - 6 YEARS </option>
+                <option value="8">8 - 10 YEARS </option>
+                <option value="9">9 - 16 YEARS</option>
+            </select>
+                <br><br>
+
+                <label for="month"><b><p> Month</b></p></label>
+                <input type="number" id="month" name="month" min="1" max="12">
+                <br><br>
+
+                <label for="year"><b><p>Year</p></b></label>
+                <input type="number" id="year" name="year" value="">
+                <br><br><br>
+                <!-- <label for="week-filter">Week:</label>
+            <select id="week-filter" name="week">
+                <option value="">All Weeks</option>
+                <option value="1">1st Week</option>
+                <option value="2">2nd Week</option>
+                <option value="3">3rd Week</option>
+                <option value="4">4th Week</option>
+            </select>
+            <br><br> -->
+                <br><br>
+
+                <button type="submit" class="filter-btn">Filter</button>
+        </form>
+    </center>
+
+</body>
+
+</html>

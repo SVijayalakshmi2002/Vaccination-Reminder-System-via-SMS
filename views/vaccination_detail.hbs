@@ -1,0 +1,176 @@
+<html>
+
+<head>
+  <style>
+    body {
+      background-image: url("/css/vaccine.jpg");
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-size: 100% 100%;
+	  
+    }
+
+
+    .container {
+      display: contents;
+    }
+
+    .container .left {
+      float: left;
+      width: 50%;
+      padding: 10px;
+      height: 100px;
+      font-family: Arial, Helvetica, sans-serif;
+      text-align: center;
+      font-size: x-large;
+    }
+
+    .container .right {
+      position: absolute;
+      float: left;
+      width: 50%;
+      padding: 10px;
+      height: 100px;
+      top: 25%;
+      left: 70%;
+      transform: translate(-50%, -50%);
+      font-family: Arial, Helvetica, sans-serif;
+      text-align: center;
+      font-size: x-large;
+    }
+
+    .styled {
+      border: 0;
+      line-height: 2.5;
+      padding: 0 20px;
+      font-size: 1rem;
+      text-align: center;
+      color: #fff;
+      text-shadow: 1px 1px 1px #000;
+      border-radius: 10px;
+      background-color: rgba(220, 0, 0, 1);
+      background-image: linear-gradient(to top left, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2) 30%, rgba(0, 0, 0, 0));
+      box-shadow: inset 2px 2px 3px rgba(255, 255, 255, 0.6), inset -2px -2px 3px rgba(0, 0, 0, 0.6);
+    }
+
+    .styled:hover {
+      background-color: rgba(255, 0, 0, 1);
+    }
+
+    .styled:active {
+      box-shadow: inset -2px -2px 3px rgba(255, 255, 255, 0.6), inset 2px 2px 3px rgba(0, 0, 0, 0.6);
+    }
+
+    input[type=submit] {
+      background-color: rgb(60, 34, 230);
+      border: 3cm;
+      text-decoration: none;
+      color: rgb(252, 249, 249);
+      padding: 15px 15px;
+      margin: 5px 5px;
+      cursor: pointer;
+      font-size: 16px;
+      border-radius: 8px;
+      float: center;
+      display: block;
+      position: fixed;
+      left: 50%;
+      transform: translateX(-50%);
+
+    }
+
+    input[type=submit]:hover {
+      box-shadow: 2px 2px 2px 1px rgb(25, 25, 230);
+      background-color: rgb(161, 169, 230);
+    }
+  </style>
+</head>
+
+<body>
+
+  <script>
+    const urlSearchParams = new URLSearchParams(window.location.search);
+    const params = Object.fromEntries(urlSearchParams.entries());
+    const applicationId = params.APPLICATIONID;
+    console.log(applicationId); // Output the applicationId value to the console
+  </script>
+
+
+
+
+  <nav>
+    <div class="logo">VACCINATION REMINDER</div>
+    <div class="menu">
+      <a href="/">Home</a>
+      <a href="/register">Register</a>
+      <a href="/login">Login</a>
+      <a href="/report">Report</a>
+    </div>
+  </nav>
+  <h1>
+    <center>VACCINATION DETAILS</center>
+  </h1>
+  <hr>
+
+  <h2>APPLICATION ID: {{id}} </h2> 
+
+  <div class="container">
+    <form action="/users/vaccination_detail" method="post">
+
+      <h2>
+        <center>
+          <label for="date">Date:</label>
+          <input type="date" id="date" name="date" required style="height: 40px;width:120px;display:inline-table"
+            value="">
+          <script>
+            var today = new Date().toISOString().substr(0, 10);
+            document.querySelector("#date").value = today;
+          </script>
+        </center>
+      </h2><br>
+
+      <div class="left">
+        <input type="radio" name="vaccine" value=1@{{id}} required><strong>1</strong> <br>
+        <b>AT BIRTH</b>
+        <br><br>
+        <input type="radio" name="vaccine" value=2@{{id}} required><strong>2</strong><br>
+        <b>6TH WEEK</b>
+        <br><br>
+        <input type="radio" name="vaccine" value=3@{{id}}><strong>3</strong><br>
+        <b>10TH WEEK</b>
+        <br><br>
+        <input type="radio" name="vaccine" value=4@{{id}}><strong>4</strong><br>
+        <b>14TH WEEK</b>
+        <br><br>
+        </div>
+        <div class="right">
+        <input type="radio" name="vaccine" value=5@{{id}}><strong>5</strong><br>
+        <b>9TH - 12TH MONTHS</b>
+        <br> <br>
+        <input type="radio" name="vaccine" value=6@{{id}}><strong>6</strong><br>
+        <b>16TH - 24TH MONTHS</b>
+        <br><br>
+        <input type="radio" name="vaccine" value=7@{{id}}><strong>7</strong><br>
+        <b>5 - 6 YEARS</b>
+        <br><br>
+        <input type="radio" name="vaccine" value=8@{{id}}><strong>8</strong><br>
+        <b>10 YEARS</b>
+        <br><br>
+        <input type="radio" name="vaccine" value=9@{{id}}><strong>9</strong><br>
+        <b>16 YEARS</b>
+    
+        {{!-- <button class="favorite styled" type="button">SUBMIT</button> --}}
+        
+        <div class="btn">
+          <input type="submit" value="Submit" style="">
+        </div>
+        
+</div>
+    </form>
+
+    
+
+  </div>
+</body>
+
+</html>
